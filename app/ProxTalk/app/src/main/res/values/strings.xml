@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">ProxTalk</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="login_failed">"Login failed"</string>
+
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must have 8–32 characters, at least one digit,special character(@\$!%*#?&amp;.,-)</string>
+    <string name="passwords_not_same">Passwords are not same</string>
+    <string name="invalid_password_login">Password in bad format</string>
+    <string name="invalid_email">Invalid email format</string>
+    <string name="bad_login">Username or password are not correct</string>
+    <string name="cant_reach_server">Server does not respond</string>
+    <string name="cant_do_action">Cant do that action</string>
+    <string name="success_register">Successfully registered</string>
+    <string name="username_exists">Username already exists</string>
+    <string name="error">Error occurred</string>
+    <string name="storage_not_granted">Storage permission was not granted</string>
+    <string name="image_not_sent">Image was not sent due to the error</string>
+    <string name="cant_sent_msg">"Cant sent message"</string>
+    <string name="session_expired">Login session has expired</string>
+    <string name="ble_not_supported">BLE is not supported on your device</string>
+    <string name="invalid_image_extension">Not allowed image extension, allowed jpg,jpeg,png</string>
+    <string name="empty_content">Content cannot be empty</string>
+    <string name="image_is_too_big">"Image is too much big, 10MB is maximum"</string>
+    <string name="image_error">Cannot read image</string>
+
+
+</resources>

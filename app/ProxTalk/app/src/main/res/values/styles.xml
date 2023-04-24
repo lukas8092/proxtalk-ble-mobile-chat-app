@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="roundCorners">
+        <item name="cornerSize">7%</item>
+    </style>
+
+    <style name="whiteToogle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="endIconTint">@color/white</item>
+    </style>
+
+    <style name="ProgressBarStyle">
+        <item name="colorAccent">@color/white</item>
+    </style>
+    <style name="SplashTheme" parent="Theme.ProxTalk">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
+    <style name="whiteBtn" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:colorButtonNormal">@color/white</item>
+    </style>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+    </style>
+
+</resources>

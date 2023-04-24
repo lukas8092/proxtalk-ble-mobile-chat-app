@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/random_message"
+        android:icon="@drawable/random_message_icon"
+        app:showAsAction="ifRoom"
+        android:title="Random message">
+    </item>
+    <item
+        android:id="@+id/user_settings"
+        android:icon="@drawable/user_account_icon"
+        app:showAsAction="ifRoom"
+        android:title="Add">
+    </item>
+    <item
+        android:id="@+id/send_page"
+        android:icon="@drawable/send_message_icon"
+        app:showAsAction="ifRoom"
+        android:title="Add">
+    </item>
+
+</menu>

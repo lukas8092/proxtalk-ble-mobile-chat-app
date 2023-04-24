@@ -1,0 +1,449 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "API DOC for OMEGA",
+    "description": "API for for project omega",
+    "contact": {
+      "name": "Lukas S.",
+      "email": "step@spsejecna.cz"
+    },
+    "version": "0.0.1"
+  },
+  "tags": [
+    {
+      "name": "user",
+      "description": "User actions"
+    },
+    {
+      "name": "message",
+      "description": "Actions with messages"
+    }
+  ],
+  "servers": [
+    {
+      "url": "devlukas.tk"
+    }
+  ],
+  "paths": {
+    "/user/register": {
+      "post": {
+        "summary": "Register user",
+        "description": "User register",
+        "tags": [
+          "user"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "data",
+            "schema": {
+              "$ref": "#/definitions/user-register"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Suscess register"
+          },
+          "400": {
+            "description": "Bad parametrs"
+          }
+        }
+      }
+    },
+    "/user/login/": {
+      "get": {
+        "summary": "User login",
+        "description": "User login",
+        "tags": [
+          "user"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/user-login"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucess login",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/definitions/user-login"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "bad format"
+          },
+          "401": {
+            "description": "Not valid login data"
+          }
+        }
+      }
+    },
+    "/user/validate_token": {
+      "get": {
+        "summary": "Validate token",
+        "description": "Validate token",
+        "tags": [
+          "user"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "token",
+            "schema": {
+              "type": "string",
+              "example": "f45x45dd45fb"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Valid token"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "401": {
+            "description": "Token is not valid"
+          }
+        }
+      }
+    },
+    "/user/upload_profile_image": {
+      "post": {
+        "summary": "Upload profile image",
+        "description": "Upload profile image",
+        "tags": [
+          "user"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "file",
+            "type": "file",
+            "description": "Image to upload"
+          },
+          {
+            "in": "header",
+            "name": "token",
+            "schema": {
+              "type": "string",
+              "example": "dg545sf"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucess upload"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "406": {
+            "description": "Upload failed"
+          }
+        }
+      }
+    },
+    "/user/profile_image": {
+      "get": {
+        "summary": "Get user profile image",
+        "description": "Get user profile image",
+        "tags": [
+          "user"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "token",
+            "schema": {
+              "type": "string",
+              "example": "hfe45fvx"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returned image",
+            "content": {
+              "application/image": {
+                "name": "image"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "401": {
+            "description": "Cant return image"
+          }
+        }
+      }
+    },
+    "/message/create": {
+      "post": {
+        "summary": "Create message",
+        "description": "Create message",
+        "tags": [
+          "message"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "data",
+            "schema": {
+              "$ref": "#/definitions/message-create"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucees created message"
+          },
+          "401": {
+            "description": "Unathorized"
+          }
+        }
+      }
+    },
+    "/message/postImage": {
+      "post": {
+        "summary": "Upload message image",
+        "description": "Upload message image",
+        "tags": [
+          "message"
+        ],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "image",
+            "type": "file",
+            "description": "Image to upload"
+          },
+          {
+            "in": "header",
+            "name": "token",
+            "schema": {
+              "type": "string",
+              "example": "dg545sf"
+            }
+          },
+          {
+            "in": "header",
+            "name": "id",
+            "schema": {
+              "type": "string",
+              "example": 544
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucess upload"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "406": {
+            "description": "Upload failed"
+          }
+        }
+      }
+    },
+    "/message/image": {
+      "get": {
+        "summary": "Get message image",
+        "description": "Get message image",
+        "tags": [
+          "message"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "token",
+            "schema": {
+              "type": "string",
+              "example": "hfe45fvx"
+            }
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "int",
+              "example": "hfe45fvx"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returned image",
+            "content": {
+              "application/image": {
+                "name": "image"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "401": {
+            "description": "Cant return image"
+          }
+        }
+      }
+    },
+    "/message/profile_image": {
+      "get": {
+        "summary": "Get image of message author",
+        "description": "Get image of message author",
+        "tags": [
+          "message"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "token",
+            "schema": {
+              "type": "string",
+              "example": "hfe45fvx"
+            }
+          },
+          {
+            "in": "path",
+            "name": "message_id",
+            "schema": {
+              "type": "int",
+              "example": "hfe45fvx"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returned image",
+            "content": {
+              "application/image": {
+                "name": "image"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "401": {
+            "description": "Cant return image"
+          }
+        }
+      }
+    },
+    "/message/reaction": {
+      "post": {
+        "summary": "Add reaction to message",
+        "description": "Add reaction to message",
+        "tags": [
+          "message"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/add-reaction"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucess"
+          },
+          "401": {
+            "description": "Not valid input"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "user-register": {
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string",
+          "example": "Karel"
+        },
+        "passwd": {
+          "type": "string",
+          "example": "1234"
+        },
+        "email": {
+          "type": "string",
+          "example": "user@gmail.com"
+        },
+        "bt_mac": {
+          "type": "string",
+          "example": "fd:45:sd"
+        }
+      }
+    },
+    "user-login": {
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string",
+          "example": "Karel"
+        },
+        "passwd": {
+          "type": "string",
+          "example": "1234"
+        }
+      }
+    },
+    "sucess-login": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string",
+          "example": "dg-fdbf-456"
+        }
+      }
+    },
+    "message-create": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string",
+          "example": "1NMcutECS3uU4TQsAkPaHwxOV1qtzc"
+        },
+        "content": {
+          "type": "string",
+          "example": "Hello world!"
+        }
+      }
+    },
+    "add-reaction": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string",
+          "example": "1NMcutECS3uU4TQsAkPaHwxOV1qtzc"
+        },
+        "message_id": {
+          "type": "int",
+          "example": 45
+        },
+        "message_type": {
+          "type": "int",
+          "example": 1
+        }
+      }
+    }
+  }
+}
