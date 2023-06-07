@@ -1,5 +1,8 @@
 # ProxTalk - Bluetooth Low Energy Chat mobile application 
 Mobile app that allows you send messages to people around you, approximately 15m. You can send text and images and then when you recive message you can react on that. Its on social network concept.  
+  
+<a href="https://youtu.be/AtK3QXHF-L4">Video of application</a>  
+  
 <a href="https://play.google.com/store/apps/details?id=com.lukas.proxtalk&pli=1"><img src="https://raw.githubusercontent.com/lukas8092/proxtalk-ble-mobile-chat-app/main/images/google-play-badge.png" width=20% height=20%></a>
 ## About project
 Mobile app is made in Kotlin in Android Studio.  
